@@ -1,0 +1,23 @@
+{
+  "name": "doox-api-postgres",
+  "version": "1.0.0",
+  "description": "api to be consumed in client side with Vue framework - doox.in",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najibean/doox-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/najibean/doox-api/issues"
+  },
+  "homepage": "https://github.com/najibean/doox-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  }
+}
