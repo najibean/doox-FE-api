@@ -1,9 +1,11 @@
 const { Pool } = require('pg')
+const env = require('dotenv').config()
+
 const pool = new Pool({
     user: 'postgres',
-    database: 'doox.in',
+    database: env.DATABASE,
     password: 'admin',
-    port: 5432
+    port: env.PORT
 })
 
 pool.connect(err => {
