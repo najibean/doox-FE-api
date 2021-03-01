@@ -2,10 +2,12 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const router = require('./routes/user')
+const cors = require('cors')
 const port = 3000
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
 
 // to test the connection
 app.get('/', (req, res) => {
