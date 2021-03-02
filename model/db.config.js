@@ -3,9 +3,9 @@ const env = require('dotenv').config()
 
 const pool = new Pool({
     user: 'postgres',
-    database: env.DATABASE,
+    database: 'doox.in',
     password: 'admin',
-    port: env.PORT
+    port: 5432
 })
 
 pool.connect(err => {
