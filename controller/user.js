@@ -29,7 +29,7 @@ exports.findAll = function (req, res) {
 
 // Create and save new user
 exports.create = function (req, res) {
-    const { username, email, password } = req.body
+    const { email, username, password } = req.body
 
     // Validate request
     if (req.body.username == '' || req.body.email == '' || req.body.password == '') {
@@ -39,14 +39,14 @@ exports.create = function (req, res) {
     }
 
     // Save Customer in the database
-    User.create([username, email, password], function (err, data) {
+    User.create([email, username, password], function (err, data) {
         if (err) {
             res.status(500).send({
                 message: err.message || 'Some error accurred while creating the Customer.'
             })
         } else res.status(200).json({
+            email: email,
             username: username,
-            email: email
         })
     })
 }
@@ -66,8 +66,8 @@ exports.findOne = function (req, res) {
             }
         } else res.status(200).send({
             id: userId,
+            email: data[0].email,
             username: data[0].username,
-            email: data[0].email
         })
     })
 }

@@ -3,14 +3,14 @@ const sql = require('./db.config')
 // constructor
 // this time, the constructor not from class but direct to function!
 const User = function (user) {
-    this.username = user.username;
     this.email = user.email;
+    this.username = user.username;
     this.password = user.password;
 }
 
 // CREATE NEW USER
 User.create = function (newUser, result) {
-    let queryRaw = 'INSERT INTO users (username, email, password) VALUES ($1, $2, $3)'
+    let queryRaw = 'INSERT INTO users (email, username, password) VALUES ($1, $2, $3)'
     sql.query(queryRaw, newUser, function (err, res) {
         if (err) {
             console.log('error: ', err)
